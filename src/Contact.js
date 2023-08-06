@@ -1,27 +1,66 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import styled, { keyframes } from 'styled-components';
 
-const ContactContainer = styled.section`
+const floatAnimation = keyframes`
+    0% {
+        transform: translateY(5900%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(300%);
+        opacity: 0;
+    }
+`;
+const StyledDiv = styled.div`
+    background-color: #8ee4af;
+    padding: 50px;
+    height: 100vh;
+
+`;
+const BubbleContainer = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+`;
+
+const Bubble = styled.div`
+  z-index: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20%;
+  animation: ${floatAnimation} ${(props) => props.duration || "5s"} linear infinite;
+`;
+const ContactContainer = styled.div`
+  
+  margin-top: 20px;
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #edf5e1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 
   h2 {
+    margin-top: 20px;
     font-size: 1.8rem;
     margin-bottom: 20px;
+    color: #05386b;
   }
 
   label {
     display: block;
     margin-bottom: 8px;
+    color: #379683;
   }
 
   input,
   textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 16px;
     border: 1px solid #ccc;
@@ -30,13 +69,13 @@ const ContactContainer = styled.section`
 
     &:focus {
       outline: none;
-      border-color: #007bff;
+      border-color: #05386b;
       box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     }
   }
 
   button {
-    background-color: #007bff;
+    background-color: #05386b;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -46,12 +85,27 @@ const ContactContainer = styled.section`
     transition: background-color 0.2s ease-in-out;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: #379683;
     }
   }
 `;
 
 const Contact = () => {
+const [bubbles, setBubbles] = useState([]);
+    useEffect(() => {
+    const numBubbles = 20;
+    const newBubbles = [];
+
+    for (let i = 0; i < numBubbles; i++) {
+        newBubbles.push({
+            id: i,
+            left: `${Math.random() * 100}%`,
+            duration: `${Math.random() * 4 + 2}s`,
+        });
+    }
+
+    setBubbles(newBubbles);
+}, []);
     const [formData, setFormData] =useState({
         name: '',
         email: '',
@@ -70,6 +124,7 @@ const handleSubmit = (e) => {
     console.log(formData);
 };
 return (
+  <StyledDiv>
     <ContactContainer>
         <h2>Get in touch</h2>
         <form onSubmit={handleSubmit}>
@@ -106,7 +161,17 @@ return (
             </div>
             <button type="submit">Submit</button>
         </form>
+        <BubbleContainer>
+                {bubbles.map((bubble) => (
+                    <Bubble
+                    key={bubble.id}
+                    duration={bubble.duration}
+                    style={{ left: bubble.left }}
+                    />
+                ))}
+        </BubbleContainer>
     </ContactContainer>
+    </StyledDiv>
 );
 }
 export default Contact;

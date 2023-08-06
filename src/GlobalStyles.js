@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Roboto', Arial, sans-serif;
         line-height: 1.6;
-        background-color: #f5f5f5;
+        background-color: #edf5e1;;
         color: #333;
     }
 

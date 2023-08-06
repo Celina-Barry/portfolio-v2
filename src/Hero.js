@@ -1,19 +1,14 @@
 import React from "react";
-import styled, { keyframes } from 'styled-components';
-import MousePattern from "./MousePattern";
-const fadeIn = keyframes`
-from {
-    opacity: 0;
-} to {
-    opacity: 1;
-}
-`;
+import styled from 'styled-components';
+import SinkholeEffect from "./SinkholeEffect";
+
 const HeroSection = styled.div`
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #5CDB95;
+    color: #EDF5E1;
     padding: 80px 0;
     text-align: center;
-    animation: ${fadeIn} 2s ease-in;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 const HeroTitle = styled.h1`
 font-size: 3rem;
@@ -26,9 +21,9 @@ font-size: 3rem;
 const Hero = () => {
     return(
     <HeroSection>
-        <MousePattern />
-        <HeroTitle>Hero Placeholder</HeroTitle>
-        <HeroSubtitle>Some other test</HeroSubtitle>
+        <HeroTitle>Welcome</HeroTitle>
+        <HeroSubtitle>to my website!</HeroSubtitle>
+        <SinkholeEffect numSinkholes={45} />
     </HeroSection>
     );
 };

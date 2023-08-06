@@ -3,19 +3,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./Header";
 import Homepage from "./Homepage";
 import Contact from "./Contact";
-import GlobalStyles from "./GlobalStyles";
-import Bio from "./Bio";
 import Projects from "./Projects";
+import BioPage from "./BioPage"
+import MarketoStuff from "./MarketoStuff";
 
 const App = () => {
   return (
     <Router>
-      <GlobalStyles />
         <Header />
         <Routes>
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/bio" element={<Bio />} />
+          <Route path="/marketostuff" element={<MarketoStuff />} />
+          <Route path="/bio" element={<BioPage />} />
           <Route path="/" element={<Homepage />} />
         </Routes>
 
