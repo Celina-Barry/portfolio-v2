@@ -144,6 +144,7 @@ return (
                 <input
                 type="text"
                 id="name"
+                name='name'
                 value={formData.name}
                 onChange={handleChange}
                 required
