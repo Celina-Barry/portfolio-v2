@@ -2,23 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
-  background-color: #05386b;
-  color: #edf5e1;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 20px;
+    background-color: #05386b;
+    color: #edf5e1;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
 `;
 
 const HeaderTitle = styled.h1`
-  font-size: 2.5rem;
-  margin: 0;
+    font-size: 2.5rem;
+    margin: 0;
 `;
 
 const HeaderSubtitle = styled.h2`
-  font-size: 1.2rem;
-  margin: 0;
-  `;
+    font-size: 1.2rem;
+    margin: 0;
+`;
 
 
 const StyledDiv = styled.div`
@@ -49,29 +49,29 @@ const Container = styled.a`
 `;
 
 const Image = styled.img`
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
 `;
 
 const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 `;
 
 const Title = styled.h2`
-  color: #05386b;
-  margin-bottom: 10px;
+    color: #05386b;
+    margin-bottom: 10px;
 `;
 
 const Description = styled.p`
-  color: #379683;
+    color: #379683;
 `;
 
 const Projects = () => {
-  return (
+    return (
     <StyledDiv>
         <StyledHeader>
             <HeaderTitle>Cool Projects</HeaderTitle>
@@ -116,7 +116,7 @@ const Projects = () => {
 
 
     </StyledDiv>
-  );
+    );
 };
 
 export default Projects;

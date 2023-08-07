@@ -7,7 +7,7 @@ Use a format of a website to experiment in different animation techniques and to
 - bubble animations on contact and marketo pages
 - slide-in and falling animations on About page
 - button animations
-- header icons 
+- spinning header icons 
 - and more
 
 ## stuff that failed:
