@@ -122,7 +122,7 @@ const handleChange = (e) => {
 const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    const myForm = new FormData(myForm);
+    //const myForm = new FormData(myForm);
   
       fetch("/", {
         method: "POST",
