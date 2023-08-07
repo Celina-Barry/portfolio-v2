@@ -122,6 +122,17 @@ const handleChange = (e) => {
 const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    const myForm = new FormData(myForm);
+  
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => alert("thank-you. Someone will reach out to you shortly"))
+        .catch((error) => alert(error));
+    };
+    
 };
 return (
   <StyledDiv>
@@ -173,5 +184,5 @@ return (
     </ContactContainer>
     </StyledDiv>
 );
-}
+
 export default Contact;
