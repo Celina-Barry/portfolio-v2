@@ -117,7 +117,7 @@ const handleChange = (e) => {
     setFormData((prevData) => ({
         ...prevData,
         [name]: value,
-    }))
+    }));
 }
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -131,8 +131,8 @@ const handleSubmit = (e) => {
       })
         .then(() => alert("thank-you. Someone will reach out to you shortly"))
         .catch((error) => alert(error));
-    };
-    
+
+  
 };
 return (
   <StyledDiv>
@@ -184,5 +184,5 @@ return (
     </ContactContainer>
     </StyledDiv>
 );
-
+}
 export default Contact;
