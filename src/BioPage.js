@@ -33,7 +33,7 @@ const ContentContainer = styled.div`
     background-color: #edf5e1;
 `;
 const BioPage = () => {
-    const values = ["Marketo", "Salesforce", "Hubspot", "Workato", "UA/GA4", "Looker", "Direct Mail", "Live Events", "l10n",];
+    const values = ["Marketo +l10n", "Salesforce", "Hubspot", "Workato", "UA/GA4", "Looker", "Direct Mail", "Node.js", "JavaScript", "Express.js"];
     return (
         <ContentContainer>      
         <HeaderSection>
