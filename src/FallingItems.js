@@ -13,7 +13,7 @@ const FallingValuesContainer = styled.div`
     align-items: left;
     position: relative;
     background-color: #edf5e1;
-    width: 100%;
+    width: 90%;
     height: 20vh;
     overflow: visible;
     @media (max-width: 768px) {
